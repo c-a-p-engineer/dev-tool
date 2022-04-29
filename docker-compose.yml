@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: ./docker/frontend/Dockerfile
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - WDS_SOCKET_PORT=0
+    working_dir: /src/app
+    volumes:
+      - ./:/src/app
+    ports:
+      - "3000:3000"
+    tty: true
