@@ -1,32 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./components/pages/HomePage";
+import JsonFormatPage from "./components/pages/JsonFormatPage";
 
-const App = () => {
-  return <JsonFromatComponent />;
-};
-
-const JsonFromatComponent = () => {
-  let [formatJson, setFormatJson]: [
-    string,
-    React.Dispatch<React.SetStateAction<string>>
-  ] = useState<string>("");
-  const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (ev) => {
-    console.log(ev.target.value);
-    try {
-      console.log(JSON.stringify(ev.target.value, null, "  "));
-      setFormatJson(JSON.stringify(JSON.parse(ev.target.value), null, "  "));
-    } catch (error) {
-      console.error(error);
-    }
-  };
+const App: React.FC = () => {
   return (
-    <div>
-      <h2>JSON整形</h2>
-      <div>
-        <textarea onChange={handleChange}></textarea>
-      </div>
-      <h2>整形結果</h2>
-      <pre>{formatJson}</pre>
-    </div>
+    <React.StrictMode>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/json-format" element={<JsonFormatPage />} />
+        </Routes>
+      </BrowserRouter>
+    </React.StrictMode>
   );
 };
+
 export default App;
