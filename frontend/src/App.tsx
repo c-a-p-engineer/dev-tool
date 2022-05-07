@@ -7,7 +7,7 @@ import SqlFormatPage from "./components/pages/SqlFormatPage";
 const App = () => {
   return (
     <React.StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename="/dev-tool/">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/json-format" element={<JsonFormatPage />} />

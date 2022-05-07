@@ -1,0 +1,39 @@
+name: Frontend Build
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "frontend/**"
+
+jobs:
+  Bulid:
+    # Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Setup Hugo
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "17"
+          cache: npm
+          cache-dependency-path: "**/package-lock.json"
+
+      # DevTool Build
+      - name: Build
+        run: |
+          cd ./frontend
+          npm install
+          npm run build
+          mv -fv ./build/ ../docs/
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
