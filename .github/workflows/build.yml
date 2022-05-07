@@ -30,6 +30,7 @@ jobs:
           cd ./frontend
           npm install
           npm run build
+          cp ./build/index.html ./build/404.html
           mv -fv ./build/ ../docs/
 
       - name: Deploy
