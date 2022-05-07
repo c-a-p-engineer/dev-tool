@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dev-tool/static/css/main.41a0080f.css",
+    "main.js": "/dev-tool/static/js/main.04c47a95.js",
+    "index.html": "/dev-tool/index.html",
+    "main.41a0080f.css.map": "/dev-tool/static/css/main.41a0080f.css.map",
+    "main.04c47a95.js.map": "/dev-tool/static/js/main.04c47a95.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.41a0080f.css",
+    "static/js/main.04c47a95.js"
+  ]
+}
