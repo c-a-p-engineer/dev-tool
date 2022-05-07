@@ -2,3 +2,13 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+textarea {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  margin: 0px 10px 0px 0px;
+}

@@ -230,6 +230,14 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
                 <ListItemText primary="JSON整形" />
               </ListItem>
             </Link>
+            <Link to="/sql-format" className={classes.link}>
+              <ListItem button>
+                <ListItemIcon>
+                  <FormatAlignLeft />
+                </ListItemIcon>
+                <ListItemText primary="SQL整形" />
+              </ListItem>
+            </Link>
           </List>
         </Drawer>
         <main className={classes.content}>

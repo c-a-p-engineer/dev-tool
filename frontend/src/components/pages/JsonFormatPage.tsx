@@ -18,9 +18,9 @@ const JsonFromatPage = () => {
   return (
     <GenericTemplate title="JSON整形">
       <div>
-        <h2>JSON整形</h2>
+        <h2>整形前</h2>
         <div>
-          <textarea onChange={handleChange}></textarea>
+          <textarea rows={10} onChange={handleChange}></textarea>
         </div>
         <h2>整形結果</h2>
         <pre>{formatJson}</pre>
