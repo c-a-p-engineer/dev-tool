@@ -14,7 +14,7 @@ const SqlFormatPage = () => {
   const [text, setText]: [
     string,
     React.Dispatch<React.SetStateAction<string>>
-  ] = useState<string>("");
+  ] = useState<string>("select * from tbl");
 
   const textChange: React.ChangeEventHandler<HTMLTextAreaElement> = (ev) => {
     setText(ev.target.value);
@@ -90,6 +90,7 @@ const SqlFormatPage = () => {
               labelId="select-sql-label"
               id="select-sql"
               label="sql"
+              value={lang}
               onChange={(e) => langChange(e.target.value as SqlLanguage)}
             >
               <MenuItem value="sql">Standard SQL</MenuItem>
@@ -111,6 +112,7 @@ const SqlFormatPage = () => {
               labelId="select-indent-label"
               id="select-indent"
               label="indent"
+              value={indent}
               onChange={(e) => indentChange(e.target.value as string)}
             >
               <MenuItem value="  ">2space</MenuItem>
@@ -122,6 +124,7 @@ const SqlFormatPage = () => {
             <FormControlLabel
               control={<Checkbox onChange={upperChange} />}
               label="大文字化"
+              checked={upper}
             />
           </FormControl>
         </div>

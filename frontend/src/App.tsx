@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import NotFound from "./components/pages/404";
 import HomePage from "./components/pages/HomePage";
 import JsonFormatPage from "./components/pages/JsonFormatPage";
 import SqlFormatPage from "./components/pages/SqlFormatPage";
@@ -12,6 +13,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/json-format" element={<JsonFormatPage />} />
           <Route path="/sql-format" element={<SqlFormatPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
