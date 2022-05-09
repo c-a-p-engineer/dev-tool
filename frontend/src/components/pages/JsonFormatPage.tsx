@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import GenericTemplate from "../templates/GenericTemplate";
 
 const JsonFromatPage = () => {
@@ -85,7 +87,14 @@ const JsonFromatPage = () => {
         </div>
         <pre>{formatError}</pre>
         <h2>整形結果</h2>
-        <pre>{formatJson}</pre>
+        <SyntaxHighlighter
+          language="sql"
+          style={dark}
+          showLineNumbers
+          wrapLines
+        >
+          {formatJson}
+        </SyntaxHighlighter>
       </div>
     </GenericTemplate>
   );

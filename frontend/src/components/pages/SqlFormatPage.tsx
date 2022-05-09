@@ -7,6 +7,8 @@ import {
   Select,
 } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { format } from "sql-formatter";
 import GenericTemplate from "../templates/GenericTemplate";
 
@@ -134,7 +136,14 @@ const SqlFormatPage = () => {
           </textarea>
         </div>
         <h2>整形結果</h2>
-        <pre>{formatSql}</pre>
+        <SyntaxHighlighter
+          language="sql"
+          style={dark}
+          showLineNumbers
+          wrapLines
+        >
+          {formatSql}
+        </SyntaxHighlighter>
       </div>
     </GenericTemplate>
   );
