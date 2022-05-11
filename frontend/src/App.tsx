@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import NotFound from "./components/pages/404";
-import HomePage from "./components/pages/HomePage";
-import JsonFormatPage from "./components/pages/JsonFormatPage";
-import SqlFormatPage from "./components/pages/SqlFormatPage";
+import NotFound from "./app/views/pages/404";
+import HomePage from "./app/views/pages/HomePage";
+import JsonFormatPage from "./app/views/pages/JsonFormatPage";
+import SqlFormatPage from "./app/views/pages/SqlFormatPage";
 
 const App = () => {
   return (

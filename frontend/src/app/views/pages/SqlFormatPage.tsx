@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { format } from "sql-formatter";
+import CopyButton from "../components/CopyButton";
 import GenericTemplate from "../templates/GenericTemplate";
 
 const SqlFormatPage = () => {
@@ -136,6 +137,7 @@ const SqlFormatPage = () => {
           </textarea>
         </div>
         <h2>整形結果</h2>
+        <CopyButton copyInput={formatSql}></CopyButton>
         <SyntaxHighlighter
           language="sql"
           style={dark}

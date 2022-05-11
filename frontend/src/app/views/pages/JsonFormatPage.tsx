@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import CopyButton from "../components/CopyButton";
 import GenericTemplate from "../templates/GenericTemplate";
 
 const JsonFromatPage = () => {
@@ -87,6 +88,7 @@ const JsonFromatPage = () => {
         </div>
         <pre>{formatError}</pre>
         <h2>整形結果</h2>
+        <CopyButton copyInput={formatJson}></CopyButton>
         <SyntaxHighlighter
           language="sql"
           style={dark}
