@@ -11,13 +11,14 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import {
-  createMuiTheme,
   createStyles,
+  createTheme,
   makeStyles,
   Theme,
 } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import { Timer } from "@material-ui/icons";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import FormatAlignLeft from "@material-ui/icons/FormatAlignLeft";
 import HomeIcon from "@material-ui/icons/Home";
@@ -29,7 +30,7 @@ import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     fontFamily: [
       "Noto Sans JP",
@@ -236,6 +237,14 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
                   <FormatAlignLeft />
                 </ListItemIcon>
                 <ListItemText primary="SQL整形" />
+              </ListItem>
+            </Link>
+            <Link to="/unix-time" className={classes.link}>
+              <ListItem button>
+                <ListItemIcon>
+                  <Timer />
+                </ListItemIcon>
+                <ListItemText primary="UNIX TIME変換" />
               </ListItem>
             </Link>
           </List>
